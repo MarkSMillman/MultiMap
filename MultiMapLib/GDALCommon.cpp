@@ -1,10 +1,12 @@
 #include "MultiMap.h"
 #include "GDALCommon.h"
 #include "MBRect.h"
-#include <string>
+
+DISABLE_WARNINGS
 #include "cpl_error.h"
 #include "cpl_string.h"
 #include "gdal.h"
+ENABLE_WARNINGS
 
 MULTIMAP_API GDALCommon::~GDALCommon() {
 }
@@ -108,6 +110,7 @@ MULTIMAP_API STATIC char* GDALCommon::CheckExtensionConsistency(const char* pszD
 			GDALDriverH hDriver = GDALGetDriver(i);
 			const char* pszDriverExtension =
 				GDALGetMetadataItem(hDriver, GDAL_DMD_EXTENSION, NULL);
+#pragma warning (suppress:4996)
 			if (pszDriverExtension && EQUAL(pszDestExtension, pszDriverExtension))
 			{
 				if (GDALGetDriverByName(pszDriverName) != hDriver)

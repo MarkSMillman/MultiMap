@@ -1,7 +1,10 @@
 #pragma once
 #include "MultiMap.h"
 #include "GenericType.h"
+
+DISABLE_WARNINGS
 #include "oci.h"
+ENABLE_WARNINGS
 
 class OCITools {
 public:

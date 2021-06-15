@@ -98,15 +98,15 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>include;include\oci;..\..\Boost\include_vc120_v55;..\..\GdalSDK\include;D:\Woolpert\FLiDAR\FLiDARLib\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;include/oci;$(BOOSTDIR)\include;$(GDALDIR)\include;$(FLIDARDIR)\FLiDARLib\include</AdditionalIncludeDirectories>
       <AdditionalOptions>-D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>..\..\Boost\lib_vc120_v55;..\lib64d;..\..\GdalSDK\libD;D:\Woolpert\FLiDAR\x64\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FLiDARLibD.lib;libpotrace-dll.a;libpotrace.a;oci.lib;ociw32.lib;oraocci11.lib;gdal_i.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\lib64d;$(BOOSTDIR)\lib;$(GDALDIR)\libd;$(FLiDARDIR)\x64\Debug;;$(FLiDARDIR)\LASTools\lib\Debug64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FLiDARLibD.lib;libpotrace-dll.a;libpotrace.a;oci.lib;ociw32.lib;oraocci11.lib;gdal_i_d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>
       </LinkTimeCodeGeneration>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -136,7 +136,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>include;include\oci;..\..\Boost\include_vc120_v55;..\..\GdalSDK\include;D:\Woolpert\FLiDAR\FLiDARLib\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;include/oci;$(BOOSTDIR)\include;$(GDALDIR)\include;$(FLIDARDIR)\FLiDARLib\include</AdditionalIncludeDirectories>
       <AdditionalOptions>-D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
@@ -145,7 +145,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\Boost\lib_vc120_v55;..\lib64;..\..\GdalSDK\lib;D:\Woolpert\FLiDAR\x64\Release</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\lib64;$(BOOSTDIR)\lib;$(GDALDIR)\lib;$(FLiDARDIR)\x64\Release;$(FLiDARDIR)\LASTools\lib\Release64</AdditionalLibraryDirectories>
       <AdditionalDependencies>FLiDARLib.lib;libpotrace-dll.a;libpotrace.a;oci.lib;ociw32.lib;oraocci11.lib;gdal_i.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>
       </LinkTimeCodeGeneration>
@@ -156,44 +156,25 @@
     <ClCompile Include="Action.cpp" />
     <ClCompile Include="ActionProcessor.cpp" />
     <ClCompile Include="FloatBuffer.cpp" />
-    <ClCompile Include="DLMProcessor.cpp" />
     <ClCompile Include="GDALCommon.cpp" />
     <ClCompile Include="GDALDem.cpp" />
     <ClCompile Include="GDALGrid_.cpp" />
     <ClCompile Include="GDALImageTools.cpp" />
-    <ClCompile Include="GDALOCIConnector.cpp" />
     <ClCompile Include="GDALRasterPolygonEnumerator.cpp" />
     <ClCompile Include="GDALVectorTools.cpp" />
-    <ClCompile Include="GDALWarpRaster.cpp" />
     <ClCompile Include="GenericBuffer.cpp" />
     <ClCompile Include="LASProcessor.cpp" />
     <ClCompile Include="MapTextAPI.cpp" />
     <ClCompile Include="NRC_Laplace.cpp" />
     <ClCompile Include="NRC_Linbcg.cpp" />
-    <ClCompile Include="OCITools.cpp" />
     <ClCompile Include="MFUtils.cpp" />
     <ClCompile Include="ColorTable.cpp" />
     <ClCompile Include="DBFReader.cpp" />
     <ClCompile Include="DouglasPeucker.cpp" />
     <ClCompile Include="GenericType.cpp" />
     <ClCompile Include="Logger.cpp" />
-    <ClCompile Include="MappedFile.cpp" />
     <ClCompile Include="MBRect.cpp" />
     <ClCompile Include="Mfstream.cpp" />
-    <ClCompile Include="Ogr2ogr.cpp" />
-    <ClCompile Include="ogroci\ocitest.cpp" />
-    <ClCompile Include="ogroci\oci_utils.cpp" />
-    <ClCompile Include="ogroci\ogrocidatasource.cpp" />
-    <ClCompile Include="ogroci\ogrocidriver.cpp" />
-    <ClCompile Include="ogroci\ogrocilayer.cpp" />
-    <ClCompile Include="ogroci\ogrociloaderlayer.cpp" />
-    <ClCompile Include="ogroci\ogrociselectlayer.cpp" />
-    <ClCompile Include="ogroci\ogrocisession.cpp" />
-    <ClCompile Include="ogroci\ogrocistatement.cpp" />
-    <ClCompile Include="ogroci\ogrocistringbuf.cpp" />
-    <ClCompile Include="ogroci\ogrocistroke.cpp" />
-    <ClCompile Include="ogroci\ogrocitablelayer.cpp" />
-    <ClCompile Include="ogroci\ogrociwritablelayer.cpp" />
     <ClCompile Include="OGRStyle.cpp" />
     <ClCompile Include="Parameters.cpp" />
     <ClCompile Include="GDALPolygonize.cpp" />
@@ -210,22 +191,19 @@
     <ClInclude Include="include\Action.h" />
     <ClInclude Include="include\ActionProcessor.h" />
     <ClInclude Include="include\FloatBuffer.h" />
-    <ClInclude Include="include\DLMProcessor.h" />
     <ClInclude Include="include\GDALCommon.h" />
+    <ClInclude Include="include\GDALDem.h" />
     <ClInclude Include="include\GDALGrid_.h" />
     <ClInclude Include="include\GDALImageTools.h" />
-    <ClInclude Include="include\GDALDem.h" />
     <ClInclude Include="include\GDALPolygonize.h" />
     <ClInclude Include="include\GDALRasterPolygonEnumerator.h" />
     <ClInclude Include="include\GDALVectorTools.h" />
-    <ClInclude Include="include\GDALWarpRaster.h" />
     <ClInclude Include="include\GenericBuffer.h" />
     <ClInclude Include="include\LASProcessor.h" />
     <ClInclude Include="include\NRC_Laplace.h" />
     <ClInclude Include="include\MapTextAPI.h" />
     <ClInclude Include="include\NRC.h" />
     <ClInclude Include="include\NRC_Linbcg.h" />
-    <ClInclude Include="include\OCITools.h" />
     <ClInclude Include="include\MFUtils.h" />
     <ClInclude Include="include\ColorTable.h" />
     <ClInclude Include="include\DouglasPeucker.h" />
@@ -233,11 +211,9 @@
     <ClInclude Include="include\GenericType.h" />
     <ClInclude Include="include\ExtraBytes.h" />
     <ClInclude Include="include\Logger.h" />
-    <ClInclude Include="include\MappedFile.h" />
     <ClInclude Include="include\MFistream.hpp" />
     <ClInclude Include="include\MFostream.hpp" />
     <ClInclude Include="include\Mfstream.h" />
-    <ClInclude Include="include\GDALOCIConnector.h" />
     <ClInclude Include="include\Ogr2ogr.h" />
     <ClInclude Include="include\OGRStyle.h" />
     <ClInclude Include="include\Parameters.h" />
@@ -255,7 +231,6 @@
     <ClInclude Include="include\SystemInfo.h" />
     <ClInclude Include="include\ThreadTools.h" />
     <ClInclude Include="include\VectorTools.h" />
-    <ClInclude Include="ogroci\ogr_oci.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

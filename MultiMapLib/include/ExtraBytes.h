@@ -16,7 +16,7 @@
 * You may NOT remove this copyright notice; it must be retained in any modified 
 * version of the software.
 **/
-#include <stdint.h>
+
 #include "MultiMap.h"
 #include "GenericType.h"
 

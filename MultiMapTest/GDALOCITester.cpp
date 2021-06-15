@@ -1,4 +1,5 @@
 #pragma warning ( disable : 4251 )
+#ifdef USE_OCI
 #include "MultiMap.h"
 #include "MultiMapTest.h"
 #include "MFUtils.h"
@@ -334,3 +335,4 @@ BOOST_AUTO_TEST_CASE(VRVTester) {
 	RunWayLineTester();
 	*/
 }
+#endif

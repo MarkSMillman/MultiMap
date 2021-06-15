@@ -1,3 +1,4 @@
+#include "MultiMap.h"
 #include "GenericBuffer.h"
 
 STATIC const int GenericBuffer::DeltaX[8] = { 0, 0, -1, 1, 1, -1, -1, 1 };

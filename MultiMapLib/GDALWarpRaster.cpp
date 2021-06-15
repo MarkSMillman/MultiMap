@@ -1,17 +1,14 @@
-#pragma warning ( disable : 4251 )
 #include "MultiMap.h"
 #include "GDALWarpRaster.h"
+
+DISABLE_WARNINGS
 #include "gdal_priv.h"
 #include "gdal_alg.h"
 #include "gdalwarper.h"
 #include "cpl_string.h"
 #include "ogr_spatialref.h"
 #include "ogr_api.h"
-
-#ifdef _DEBUG
-#pragma warning ( disable : 4189 )
-#endif
-#pragma warning ( disable : 4996 ) // ignore POSIX deprecation warning
+ENABLE_WARNINGS
 
 MULTIMAP_API GDALWarpRaster::~GDALWarpRaster(void) {
 }

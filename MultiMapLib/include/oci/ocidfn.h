@@ -72,7 +72,7 @@
 #ifndef OCIDFN
 #define OCIDFN
 
-#include <oratypes.h>
+#include <oci/oratypes.h>
 
 /* The cda_head struct is strictly PRIVATE.  It is used
    internally only. Do not use this struct in OCI programs. */

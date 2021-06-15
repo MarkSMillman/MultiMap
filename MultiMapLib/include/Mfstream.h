@@ -1,10 +1,14 @@
 #pragma once
 #include "MultiMap.h"
-#include <fstream>
 #include "MappedFile.h"
 
-class MappedFile;
+DISABLE_WARNINGS
+#include <fstream>
+ENABLE_WARNINGS
 
+namespace FLIDAR {
+	class MappedFile;
+}
 class Mfstream : public std::fstream {
 public:
 	MULTIMAP_API ~Mfstream(void);
@@ -33,7 +37,7 @@ public:
 	void _Add_vtordisp1(); // required to meet virtual requirements of fstream
 	void _Add_vtordisp2(); // required to meet virtual requirements of fstream
 protected:
-	MappedFile* mf;
+	FLIDAR::MappedFile* mf;
 	char* currentPosition;
 	size_t last_read_count;
 	std::ios::iostate iostate;

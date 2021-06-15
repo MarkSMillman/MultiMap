@@ -258,12 +258,14 @@
 #include "MultiMap.h"
 #include "ShapeReader.h"
 
+DISABLE_WARNINGS
 #include <math.h>
 #include <limits.h>
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+ENABLE_WARNINGS
 
 SHP_CVSID("$Id$")
 

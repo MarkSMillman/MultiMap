@@ -4,13 +4,9 @@
 #include "MBRect.h"
 #include "Logger.h"
 
-#pragma warning ( disable : 4251 ) // disable std::vector<_Ty> needs dll-interface warning from within gdal_priv.h
+DISABLE_WARNINGS
 #include "gdal_priv.h"
-
-#undef min
-#undef max
-#define max(a,b) (((a) > (b)) ? (a) : (b))
-#define min(a,b) (((a) < (b)) ? (a) : (b))
+ENABLE_WARNINGS
 
 MULTIMAP_API ByteBuffer::~ByteBuffer(void) {
 	if (buffer && !foreignBuffer) {
@@ -370,8 +366,8 @@ MULTIMAP_API unsigned int ByteBuffer::NeighborhoodCount(size_t x, size_t y, size
 					if (InGrid(tx, ty)) {
 						count++;
 						unsigned int nc = NeighborCount(tx, ty);
-						minc = min(minc, nc);
-						maxc = max(maxc, nc);
+						minc = std::min(minc, nc);
+						maxc = std::max(maxc, nc);
 					}
 				}
 			}

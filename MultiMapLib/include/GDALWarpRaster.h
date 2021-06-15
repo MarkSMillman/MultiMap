@@ -1,9 +1,12 @@
 #pragma once
 #include "GDALCommon.h"
+
+DISABLE_WARNINGS
 #include "gdalwarper.h"
 #include "cpl_string.h"
 #include "ogr_spatialref.h"
 #include "ogr_api.h"
+ENABLE_WARNINGS
 
 #define OGR_ENABLED
 

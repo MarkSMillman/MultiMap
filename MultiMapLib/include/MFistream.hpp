@@ -1,8 +1,11 @@
 #pragma once
 #include "MultiMap.h"
+#include "MappedFile.h"
+
+DISABLE_WARNINGS
 #include <boost/iostreams/device/file.hpp>
 #include <boost/iostreams/stream.hpp>
-#include "MappedFile.h"
+ENABLE_WARNINGS
 
 class MappedFile;
 template<class _Traits> 

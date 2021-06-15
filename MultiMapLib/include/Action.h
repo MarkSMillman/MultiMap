@@ -27,8 +27,8 @@ public:
 	MULTIMAP_API double getResolution();
 
 private:
-	ActionType type;
-	bool sideAction;
+	ActionType type{ AT_None };
+	bool sideAction{ false };
 	std::string inDriver;
 	std::string outDriver;
 	std::string inLayerSQL;
@@ -36,7 +36,7 @@ private:
 	std::string outLayerSQL;
 	std::string outLayerName;
 
-	double rasterResolution;
+	double rasterResolution{ 1.0 };
 
 	friend class ActionProcessor;
 };

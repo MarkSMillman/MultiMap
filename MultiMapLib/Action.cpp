@@ -2,16 +2,20 @@
 #include "MultiMap.h"
 #include "Action.h"
 #include "Logger.h"
+
+DISABLE_WARNINGS
 #include <boost/program_options/parsers.hpp>
 #include <boost/program_options/variables_map.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/algorithm/string.hpp>
+ENABLE_WARNINGS
 
 MULTIMAP_API Action::~Action() {
 }
 MULTIMAP_API Action::Action() {
 	type = AT_None;
+	rasterResolution = 1.0;
 	sideAction = false;
 }
 

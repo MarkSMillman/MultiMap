@@ -595,8 +595,11 @@ static OGRGeometryCollection* LoadGeometry(const char* pszDS,
 	OGRLayer            *poLyr;
 	OGRFeature          *poFeat;
 	OGRGeometryCollection *poGeom = NULL;
-
-	poDS = OGRSFDriverRegistrar::Open(pszDS, FALSE);
+	//OGRSFDriverRegistrar* registrar = new OGRSFDriverRegistrar();
+	//GDALDriver* driver = registrar->GetDriverByName(pszDS);
+	//GDALDriver* ogrDriver = OGRSFDriverRegistrar::GetRegistrar()->GetDriverByName(pszDS);
+	////poDS = OGRSFDriverRegistrar::Open(pszDS, FALSE);
+	poDS = (OGRDataSource*)GDALOpenEx(pszDS, GDAL_OF_VECTOR, nullptr, nullptr, nullptr);
 	if (poDS == NULL)
 		return NULL;
 

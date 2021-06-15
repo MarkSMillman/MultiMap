@@ -4,10 +4,11 @@
 #include "MBRect.h"
 #include "Logger.h"
 
-//#include "gdal_priv.h"
+DISABLE_WARNINGS
 #include "ogr_api.h"
 #include "ogr_core.h"
 #include "ogrsf_frmts.h"
+ENABLE_WARNINGS
 
 VectorTools::~VectorTools(void) {
 }

@@ -9,14 +9,14 @@
 #define SKIP_CONSTANTS
 #include "IOReaderLAS.h"
 #include "IOWriterLAS.h"
+#include "LidarHeader.h"
 
+DISABLE_WARNINGS
 #include "ogr_srs_api.h"
 #include "ogr_spatialref.h"
+ENABLE_WARNINGS
 
-#undef min
-#undef max
-#define max(a,b) (((a) > (b)) ? (a) : (b))
-#define min(a,b) (((a) < (b)) ? (a) : (b))
+using namespace FLIDAR;
 
 MULTIMAP_API LASProcessor::~LASProcessor(void) {
 	if (m_buffer) {
@@ -69,7 +69,7 @@ MULTIMAP_API std::string LASProcessor::getProjectionWKT(int epsg) {
 		if (m_inputFile.length() > 0) {
 			LidarHeader lidarHeader;
 			IOReaderLAS::GetHeader(lidarHeader, m_inputFile);
-			epsg = lidarHeader.epsgCode;
+			epsg = lidarHeader.m_epsgCode;
 		}
 	}
 	if (epsg > 0) {
@@ -140,13 +140,13 @@ MULTIMAP_API int LASProcessor::fill(void) {
 	IOReaderLAS* reader = new IOReaderLAS();
 	reader->Open(m_inputFile);
 	if (!m_range.Valid()) {
-		m_range.minX = reader->header.mbr.minX;
-		m_range.minY = reader->header.mbr.minY;
-		m_range.maxX = reader->header.mbr.maxX;
-		m_range.maxY = reader->header.mbr.maxY;
+		m_range.minX = reader->m_header.m_range.minX;
+		m_range.minY = reader->m_header.m_range.minY;
+		m_range.maxX = reader->m_header.m_range.maxX;
+		m_range.maxY = reader->m_header.m_range.maxY;
 	}
 
-	int epsgCode = reader->header.epsgCode;
+	int epsgCode = reader->m_header.m_epsgCode;
 
 	m_bufferXSize = static_cast<size_t>((m_range.maxX - m_range.minX) / m_resolution) + 1;
 	m_bufferYSize = static_cast<size_t>((m_range.maxY - m_range.minY) / m_resolution) + 1;
@@ -190,11 +190,11 @@ MULTIMAP_API int LASProcessor::fill(void) {
 		allocateRows = usedPointCount + bufferSize;
 		writer = new IOWriterLAS();
 	}
-	if (!writer || writer->Create(outputPathLAS, allocateRows, reader->header.mode)) {
+	if (!writer || writer->Create(outputPathLAS, allocateRows, 6)) {
 		if (writer) {
-			writer->header.offset[0] = reader->header.offset[0];
-			writer->header.offset[1] = reader->header.offset[1];
-			writer->header.offset[2] = reader->header.offset[2];
+			writer->m_header.m_offset[0] = reader->m_header.m_offset[0];
+			writer->m_header.m_offset[1] = reader->m_header.m_offset[1];
+			writer->m_header.m_offset[2] = reader->m_header.m_offset[2];
 		}
 		LidarPoint lidarPoint;
 
@@ -231,7 +231,8 @@ MULTIMAP_API int LASProcessor::fill(void) {
 				unsigned int rx = static_cast<unsigned int>(x / m_resolution);
 				unsigned int ry = static_cast<unsigned int>(y / m_resolution);
 				size_t eIndex = ry * m_bufferXSize + rx;
-				m_buffer[eIndex] = max(m_buffer[eIndex], static_cast<float>(lidarPoint.Z));
+				float Zf = static_cast<float>(lidarPoint.Z);
+				m_buffer[eIndex] = std::max(m_buffer[eIndex], Zf);
 				m_mask[eIndex] = MASK_ORIGINAL;
 
 				if (writer && m_minDistanceFilter == 0 && m_keepOriginalPts) {

@@ -1,7 +1,9 @@
 #pragma once
 #include "GDALCommon.h"
+DISABLE_WARNINGS
 #include "gdal.h"
 #include "gdal_priv.h"
+ENABLE_WARNINGS
 
 #undef EQUAL
 #ifndef EQUAL

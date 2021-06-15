@@ -1,0 +1,9 @@
+/.vs
+/x64
+/MultiMap/x64
+/MultiMapJNI/x64
+/MultiMapLib/x64
+/MultiMapTest/x64
+/MultiMap/*.user
+/MultiMapJNI/*.user
+/MultiMapTest/*.user

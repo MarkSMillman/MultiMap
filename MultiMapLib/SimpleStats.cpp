@@ -1,33 +1,5 @@
-/**
-  * Copyright 2014 Mizar, LLC
-  * All Rights Reserved.
-  *
-  * This file is part of Mizar's MultiMap software library.
-  * MultiMap is licensed under the terms of the GNU Lesser General Public License
-  * as published by the Free Software Foundation, either version 3 of the License, or
-  * (at your option) any later version a copy of which is available at http://www.gnu.org/licenses/
-  *
-  * MultiMap is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU Lesser General Public License for more details.
-  *
-  * You may NOT remove this copyright notice; it must be retained in any modified 
-  * version of the software.
-  **/
 #include "MultiMap.h"
 #include "SimpleStats.h"
-#include <algorithm>
-
-#undef min
-#undef max
-
-#ifndef max
-#define max(a,b) (((a) > (b)) ? (a) : (b))
-#endif
-#ifndef min
-#define min(a,b) (((a) < (b)) ? (a) : (b))
-#endif
 
 using namespace std;
 ///////////////////////////////////////////////////
@@ -221,8 +193,8 @@ MULTIMAP_API void SimpleStats::Compute(unsigned char* iarray, size_t size){
 				double d = static_cast<double>(iarray[i]);
 				count++;
 				sum += d;
-				minimum = min(minimum,d); 
-				maximum = max(maximum,d);
+				minimum = std::min(minimum,d); 
+				maximum = std::max(maximum,d);
 			}
 		}
 		average = sum/count;
@@ -254,8 +226,8 @@ MULTIMAP_API void SimpleStats::Compute(char* iarray, size_t size){
 				double d = static_cast<double>(iarray[i]);
 				count++;
 				sum += d;
-				minimum = min(minimum,d); 
-				maximum = max(maximum,d);
+				minimum = std::min(minimum,d); 
+				maximum = std::max(maximum,d);
 			}
 		}
 		average = sum/count;
@@ -411,40 +383,39 @@ MULTIMAP_API void SimpleStats::Compute(int* iarray, size_t size){
 	}
 }
 
-MULTIMAP_API void SimpleStats::Compute(float* farray, size_t size){
+MULTIMAP_API void SimpleStats::Compute(float* farray, size_t size) {
 	sum = 0.0;
 	count = 0;
-	if ( size > 0 ){
-		for ( size_t i = 0; i < size; ++i){
-			if ( !noDataSet || farray[i] != fNoData ) {
+	if (size > 0) {
+		for (size_t i = 0; i < size; ++i) {
+			if (!noDataSet || farray[i] != fNoData) {
 				count++;
 				sum += farray[i];
-				minimum = min(minimum,farray[i]); 
-				maximum = max(maximum,farray[i]);
+				minimum = std::min(minimum, static_cast<double>(farray[i]));
+				maximum = std::max(maximum, static_cast<double>(farray[i]));
 			}
-		}
-		average = sum/count;
+			average = sum / count;
 
-		if ( computeStddev ){
-			double sumDevSquared = 0.0;
-			for ( size_t i = 0; i < size; ++i){
-				if ( !noDataSet || farray[i] != fNoData ) {
-					double diff = (static_cast<double>(farray[i])-average);
-					sumDevSquared +=  diff*diff;
+			if (computeStddev) {
+				double sumDevSquared = 0.0;
+				for (size_t i = 0; i < size; ++i) {
+					if (!noDataSet || farray[i] != fNoData) {
+						double diff = (static_cast<double>(farray[i]) - average);
+						sumDevSquared += diff * diff;
+					}
 				}
+				stddev = sqrt(sumDevSquared / count);
 			}
-			stddev = sqrt(sumDevSquared/count);
-		}
 
-		if ( computeMedian && !noDataSet ){
-			qsort(farray,size,sizeof(float),compareFloat);
-			size_t mid = size/2;
-			median = size % 2 ? static_cast<double>((farray[mid] + farray[mid+1])/2.0) : static_cast<double>(farray[mid]);
+			if (computeMedian && !noDataSet) {
+				qsort(farray, size, sizeof(float), compareFloat);
+				size_t mid = size / 2;
+				median = size % 2 ? static_cast<double>((farray[mid] + farray[mid + 1]) / 2.0) : static_cast<double>(farray[mid]);
+			}
 		}
 	}
 }
-
-MULTIMAP_API void SimpleStats::Compute(double* darray, size_t size){
+MULTIMAP_API void SimpleStats::Compute(double* darray, size_t size) {
 	sum = 0.0;
 	count = 0;
 	if ( size > 0 ){

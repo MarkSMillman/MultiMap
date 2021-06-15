@@ -2,8 +2,10 @@
 #include "MultiMapTest.h"
 #include "MFUtils.h"
 #include "ActionProcessor.h"
+#ifdef USE_OCI
 #include "GDALOCIConnector.h"
 #include "Ogr2ogr.h"
+#endif
 #include "ThreadTools.h"
 #include "MapTextAPI.h"
 
@@ -93,6 +95,7 @@ BOOST_AUTO_TEST_CASE(ForkTester)
 	**/
 }
 
+#ifdef USE_OCI
 BOOST_AUTO_TEST_CASE(Ogr2ogrTester)
 {
 	MFUtils mfUtils;
@@ -176,7 +179,7 @@ BOOST_AUTO_TEST_CASE(Ogr2ogrTester)
 
 	OGRDataSource::DestroyDataSource(pSrcDS);
 }
-
+#endif
 BOOST_AUTO_TEST_CASE(MapTextTester) {
 
 	std::string metadataFolder = "C:\\Label-EZ\\Examples\\ArcView\\SanFrancisco";

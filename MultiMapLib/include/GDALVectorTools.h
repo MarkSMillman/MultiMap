@@ -2,7 +2,6 @@
 #include "MultiMap.h"
 #include "GDALCommon.h"
 #include "MBRect.h"
-#include <string>
 
 class OGRLayer;
 class OGRDataSource;

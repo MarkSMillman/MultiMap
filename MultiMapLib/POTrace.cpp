@@ -4,6 +4,8 @@ license. For information, contact licensing@icosasoft.ca. */
 
 /* A simple and self-contained demo of the potracelib API */
 #include "MultiMap.h"
+
+DISABLE_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
@@ -17,6 +19,7 @@ license. For information, contact licensing@icosasoft.ca. */
 #include "ogr_srs_api.h"
 #include "ogr_spatialref.h"
 #include "ogrsf_frmts.h"
+ENABLE_WARNINGS
 
 #define WIDTH 250
 #define HEIGHT 250
@@ -217,7 +220,7 @@ MULTIMAP_API int POTrace::SaveToOGRLayer(const char* layerName, OGRDataSource* p
 					case POTRACE_CORNER:
 						ring.addPoint(x[1],y[1]);
 						ring.addPoint(x[2],y[2]);
-						printf("%12.3f %12.3 lineto\n", x[1],y[1]);//c[i][1].x, c[i][1].y);
+						printf("%12.3f %12.3f lineto\n", x[1],y[1]);//c[i][1].x, c[i][1].y);
 						printf("%12.3f %12.3f lineto\n", x[2],y[2]);//c[i][2].x, c[i][2].y);
 						break;
 					case POTRACE_CURVETO:

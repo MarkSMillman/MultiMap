@@ -3,13 +3,12 @@
 #include "ParameterParser.h"
 #include "Parameters.h"
 
+DISABLE_WARNINGS
+#include <iostream>
 #include <boost/iostreams/stream_buffer.hpp>
 #include <boost/iostreams/stream.hpp>
+ENABLE_WARNINGS
 
-#undef min
-#undef max
-#define max(a,b) (((a) > (b)) ? (a) : (b))
-#define min(a,b) (((a) < (b)) ? (a) : (b))
 
 ParameterParser::~ParameterParser(void) {
 	if (cmdParser) {

@@ -28,8 +28,10 @@
 // @see http://en.wikipedia.org/wiki/List_of_colors:_N%E2%80%93Z
 
 typedef struct fNamedColor {
-	const char *name;
-	float r, g, b;
+	const char* name{ nullptr };
+	float r{ 0.f };
+	float g{ 0.f };
+	float b{ 0.f };
 } fNamedColor;
 
 static const fNamedColor fNamedColors[] = {
@@ -78,16 +80,16 @@ static const ucNamedColor ucNamedColors[] = {
 #define RGBA_MAKE(r, g, b, a)   ((unsigned long) (((a) << 24) | ((r) << 16) | ((g) << 8) | (b)))
 #endif
 
-typedef struct {
-	unsigned char a;
-	unsigned char r;
-	unsigned char g;
-	unsigned char b;
+typedef struct COLOR_ARGB{
+	unsigned char a{ 0 };
+	unsigned char r{ 0 };
+	unsigned char g{ 0 };
+	unsigned char b{ 0 };
 } COLOR_ARGB;
 
-typedef union {
+typedef union COLOR_ARGU{
 	COLOR_ARGB     argb;
-	unsigned int word32;
+	unsigned int word32{ 0 };
 } COLOR_ARGU;
 
 class ColorRow 
@@ -96,13 +98,13 @@ public:
 	MULTIMAP_API ColorRow(void);
 	MULTIMAP_API ColorRow(unsigned char _r, unsigned char _g, unsigned char _b, unsigned char _a = 255 );
 
-	float floor;
-	float ceil;
-	unsigned long color;
-	unsigned char r;
-	unsigned char g;
-	unsigned char b;
-	unsigned char a;
+	float floor{ 0.f };
+	float ceil{ 0.f };
+	unsigned long color{ 0 };
+	unsigned char r{ 0 };
+	unsigned char g{ 0 };
+	unsigned char b{ 0 };
+	unsigned char a{ 0 };
 };
 
 class ColorTable
@@ -127,14 +129,14 @@ public:
 	MULTIMAP_API unsigned long GetColor(float height);
 	MULTIMAP_API unsigned long GetColor(int row);
 
-	bool absolute;
-	unsigned int rinc;
-	unsigned int ginc;
-	unsigned int binc;
-	unsigned int mix;
-	float floor;
-	float ceil;
-	float range;
+	bool absolute{ true };
+	unsigned int rinc{ 0 };
+	unsigned int ginc{ 0 };
+	unsigned int binc{ 0 };
+	unsigned int mix{ 0 };
+	float floor{ 0.f };
+	float ceil{ 0.f };
+	float range{ 0.f };
 	std::string name;
 	std::string path;
 	std::vector<ColorRow> rows;

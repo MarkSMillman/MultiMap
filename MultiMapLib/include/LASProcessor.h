@@ -1,9 +1,8 @@
 #pragma once
-#include <vector>
+#include "FLiDAR.h"
 #include "MBRect.h"
 #include "GenericPoint.hpp"
 #include "Logger.h"
-
 
 static const unsigned char LAS_CLASS_CREATED = 0;
 static const unsigned char LAS_CLASS_UNCLASSIFIED = 1;
@@ -25,10 +24,16 @@ static const unsigned char MASK_EDGE = 1;
 static const unsigned char MASK_ORIGINAL = 2;
 static const unsigned char MASK_LAPLACE = 3;
 
-class MappedFile;
+using namespace FLIDAR;
+
+namespace FLIDAR {
+	class IOReaderLAS;
+	class MappedFile;
+}
+
 class LASParams;
-class IOReaderLAS;
 class LASProcessor {
+
 public:
 	MULTIMAP_API ~LASProcessor(void);
 	MULTIMAP_API LASProcessor(LASParams* params=NULL);

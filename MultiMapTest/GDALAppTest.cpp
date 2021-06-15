@@ -2,7 +2,9 @@
 #include "MultiMap.h"
 #include "MultiMapTest.h"
 #include "MFUtils.h"
+#ifdef USE_OCI
 #include "GDALOCIConnector.h"
+#endif
 #include "GDALDem.h"
 #include "GDALImageTools.h"
 #include "ColorTable.h"

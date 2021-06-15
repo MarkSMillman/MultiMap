@@ -1,7 +1,6 @@
 #pragma once
 #include "MultiMap.h"
 #include "GenericBuffer.h"
-#include <string>
 
 class FloatNeighborStats {
 public:

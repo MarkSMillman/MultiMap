@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
-    <Filter Include="Source Files\OGROCI">
-      <UniqueIdentifier>{7a83e771-cc54-4921-8f28-3f25bbc299d0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\GDALApps">
       <UniqueIdentifier>{17a35176-d91b-4581-b640-5d06d20a75dc}</UniqueIdentifier>
     </Filter>
@@ -37,9 +34,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DouglasPeucker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MappedFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
@@ -72,15 +66,6 @@
     <ClCompile Include="POTrace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDALOCIConnector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GDALDem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GDALWarpRaster.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GDALImageTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -102,61 +87,13 @@
     <ClCompile Include="VectorTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OCITools.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\oci_utils.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ocitest.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrocidatasource.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrocidriver.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrocilayer.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrociloaderlayer.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrociselectlayer.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrocisession.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrocistatement.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrocistringbuf.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrocistroke.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrocitablelayer.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
-    <ClCompile Include="ogroci\ogrociwritablelayer.cpp">
-      <Filter>Source Files\OGROCI</Filter>
-    </ClCompile>
     <ClCompile Include="GDALRasterPolygonEnumerator.cpp">
       <Filter>Source Files\GDALApps</Filter>
     </ClCompile>
     <ClCompile Include="GDALPolygonize.cpp">
       <Filter>Source Files\GDALApps</Filter>
     </ClCompile>
-    <ClCompile Include="Ogr2ogr.cpp">
-      <Filter>Source Files\GDALApps</Filter>
-    </ClCompile>
     <ClCompile Include="MapTextAPI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DLMProcessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OGRStyle.cpp">
@@ -186,6 +123,9 @@
     <ClCompile Include="GenericBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GDALDem.cpp">
+      <Filter>Source Files\GDALApps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ColorTable.h">
@@ -195,9 +135,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\DouglasPeucker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MappedFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Logger.h">
@@ -245,15 +182,6 @@
     <ClInclude Include="include\potracelib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\GDALOCIConnector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GDALDem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GDALWarpRaster.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\GDALImageTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -278,12 +206,6 @@
     <ClInclude Include="include\VectorTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\OCITools.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ogroci\ogr_oci.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\GDALRasterPolygonEnumerator.h">
       <Filter>Header Files\GDALApps</Filter>
     </ClInclude>
@@ -294,9 +216,6 @@
       <Filter>Header Files\GDALApps</Filter>
     </ClInclude>
     <ClInclude Include="include\MapTextAPI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\DLMProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\OGRStyle.h">
@@ -334,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="include\GenericBuffer.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALDem.h">
+      <Filter>Header Files\GDALApps</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

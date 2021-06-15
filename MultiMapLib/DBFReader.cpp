@@ -156,12 +156,15 @@
  * Treat all blank numeric fields as null too.
  */
 
+#include "MultiMap.h"
 #include "ShapeReader.h"
 
+DISABLE_WARNINGS
 #include <math.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+ENABLE_WARNINGS
 
 SHP_CVSID("$Id$")
 

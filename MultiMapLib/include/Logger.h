@@ -1,24 +1,8 @@
 #pragma once
-/**
-  * Copyright 2014 Mizar, LLC
-  * All Rights Reserved.
-  *
-  * This file is part of Mizar's MultiMap software library.
-  * MultiMap is licensed under the terms of the GNU Lesser General Public License
-  * as published by the Free Software Foundation, either version 3 of the License, or
-  * (at your option) any later version a copy of which is available at http://www.gnu.org/licenses/
-  *
-  * MultiMap is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU Lesser General Public License for more details.
-  *
-  * You may NOT remove this copyright notice; it must be retained in any modified 
-  * version of the software.
-  **/
 #include "MultiMap.h"
 #include "MFUtils.h"
 
+DISABLE_WARNINGS
 #include <time.h>
 #include <fstream>
 #include <iostream>
@@ -27,6 +11,7 @@
 #include <stdarg.h>
 
 #include <boost/function.hpp>
+ENABLE_WARNINGS
 
 // if this is changed you must also update Logger::GetLevel(int level)
 typedef enum {ALWAYS=0,DBG=1,INFO=2,WARNING=4,ERR=8,FATAL=16,OFF=1024} Level;
@@ -44,7 +29,6 @@ public:
 	static bool Logger::Exists();
 	static Level Logger::GetLevel(int _level);
 	static Level Logger::GetLevel(char* _level);
-	static std::string Logger::LogHexDumpToString(unsigned char* location, int bytes, int mark=-99);
 
 	virtual void Logger::Dereference(void);
 	virtual size_t Logger::ReferenceCount(void);
@@ -64,7 +48,6 @@ public:
 
 	virtual void Logger::Log(Level level, std::string format, ...);
 	virtual void Logger::Log(unsigned long mask, Level level, std::string format, ...);
-	virtual void Logger::LogHexDump(unsigned long mask, Level level, unsigned char* location, int bytes, int mark=-99);
 
 	virtual FILE * Logger::AboutLogOpen(std::string mode = "a");
 	virtual void Logger::AboutLogClose(void);

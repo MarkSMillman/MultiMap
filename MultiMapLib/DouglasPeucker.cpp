@@ -1,4 +1,4 @@
-#include <algorithm>
+#include "MultiMap.h"
 #include "DouglasPeucker.h"
 
 /**
@@ -205,7 +205,7 @@ PRIVATE STATIC float DouglasPeucker::PerpendicularDistance(FloatPoint point1, Fl
 	float area = abs(0.5f * (point1.X * point2.Y + point2.X * point.Y + point.X * point1.Y - point2.X * point1.Y - point.X * point2.Y - point1.X * point.Y));
 	float xDiffSq = (point1.X - point2.X) * (point1.X - point2.X);
 	float yDiffSq = (point1.Y - point2.Y) * (point1.Y - point2.Y);
-	float bottom = sqrt( xDiffSq + yDiffSq );
+	float bottom = sqrtf( xDiffSq + yDiffSq );
 	float height = area / bottom * 2.0f;
 
 	return height;

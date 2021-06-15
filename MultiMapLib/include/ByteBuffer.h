@@ -1,7 +1,6 @@
 #pragma once
 #include "MultiMap.h"
 #include "GenericBuffer.h"
-#include <string>
 
 class Logger;
 class MBRect;
@@ -42,11 +41,11 @@ public:
 
 protected:
 	inline void ByteBuffer::setBuffer(int x, int y, unsigned char value) {
-		size_t offset = y*xSize + x;
+		int offset = y*xSize + x;
 		buffer[offset] = value;
 	}
 	inline unsigned char ByteBuffer::getBuffer(int x, int y) {
-		size_t offset = y*xSize + x;
+		int offset = y*xSize + x;
 		return buffer[offset];
 	}
 

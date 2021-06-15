@@ -1,29 +1,5 @@
-/**
-* Copyright 2014 Mizar, LLC
-* All Rights Reserved.
-*
-* This file is part of Mizar's MultiMap software library.
-* MultiMap is licensed under the terms of the GNU Lesser General Public License
-* as published by the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version a copy of which is available at http://www.gnu.org/licenses/
-*
-* MultiMap is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Lesser General Public License for more details.
-*
-* You may NOT remove this copyright notice; it must be retained in any modified 
-* version of the software.
-**/
 #include "MultiMap.h"
-#include <string>
-#include <vector>
 #include "MBRect.h"
-
-#undef min
-#undef max
-#define max(a,b) (((a) > (b)) ? (a) : (b))
-#define min(a,b) (((a) < (b)) ? (a) : (b))
 
 MULTIMAP_API MBRect::~MBRect(void){
 }
@@ -147,26 +123,26 @@ MULTIMAP_API bool MBRect::Compare(MBRect & other, double precision, double *maxD
 	if ( abs(minX-other.minX) > precision ) {
 		same = false;
 		if ( maxDiff ) {
-			*maxDiff = max(*maxDiff,abs(minX-other.minX));
+			*maxDiff = std::max(*maxDiff,abs(minX-other.minX));
 		}
 	}
 	if ( abs(maxX-other.maxX) > precision ) {
 		same = false;
 		if ( maxDiff ) {
-			*maxDiff = max(*maxDiff,abs(maxX-other.maxX));
+			*maxDiff = std::max(*maxDiff,abs(maxX-other.maxX));
 		}
 	}
 
 	if ( abs(minY-other.minY) > precision ) {
 		same = false;
 		if ( maxDiff ) {
-			*maxDiff = max(*maxDiff,abs(minY-other.minY));
+			*maxDiff = std::max(*maxDiff,abs(minY-other.minY));
 		}
 	}
 	if ( abs(maxY-other.maxY) > precision ) {
 		same = false;
 		if ( maxDiff ) {
-			*maxDiff = max(*maxDiff,abs(maxY-other.maxY));
+			*maxDiff = std::max(*maxDiff,abs(maxY-other.maxY));
 		}
 	}
 	return same;
@@ -289,10 +265,10 @@ MULTIMAP_API double MBRect::Distance2d(DblPoint point) {
 		DblPoint ul(minX,maxY);
 		DblPoint ur(maxX,maxY);
 
-		distance = min(distance,point.Distance2d(ll));
-		distance = min(distance,point.Distance2d(lr));
-		distance = min(distance,point.Distance2d(ur));
-		distance = min(distance,point.Distance2d(ul));
+		distance = std::min(distance,point.Distance2d(ll));
+		distance = std::min(distance,point.Distance2d(lr));
+		distance = std::min(distance,point.Distance2d(ur));
+		distance = std::min(distance,point.Distance2d(ul));
 	}
 	return distance;
 }
@@ -613,12 +589,12 @@ MULTIMAP_API void MBRect::Update(MBRect & other) {
 }
 
 MULTIMAP_API void MBRect::Update(MBRect *other) {
-	minX = min(minX,other->minX);
-	minY = min(minY,other->minY);
-	minZ = min(minZ,other->minZ);
-	maxX = max(maxX,other->maxX);
-	maxY = max(maxY,other->maxY);
-	maxZ = max(maxZ,other->maxZ);
+	minX = std::min(minX,other->minX);
+	minY = std::min(minY,other->minY);
+	minZ = std::min(minZ,other->minZ);
+	maxX = std::max(maxX,other->maxX);
+	maxY = std::max(maxY,other->maxY);
+	maxZ = std::max(maxZ,other->maxZ);
 }
 
 MULTIMAP_API void MBRect::Update(DblPoint & point) { 
@@ -626,30 +602,30 @@ MULTIMAP_API void MBRect::Update(DblPoint & point) {
 }
 
 MULTIMAP_API void MBRect::Update(DblPoint *point) { 
-	minX = min(minX,point->X);
-	minY = min(minY,point->Y);
-	minZ = min(minZ,point->Z);
-	maxX = max(maxX,point->X);
-	maxY = max(maxY,point->Y);
-	maxZ = max(maxZ,point->Z);
+	minX = std::min(minX,point->X);
+	minY = std::min(minY,point->Y);
+	minZ = std::min(minZ,point->Z);
+	maxX = std::max(maxX,point->X);
+	maxY = std::max(maxY,point->Y);
+	maxZ = std::max(maxZ,point->Z);
 }
 MULTIMAP_API void MBRect::Update(double x, double y, double z) {
-	minX = min(minX,x);
-	minY = min(minY,y);
-	minZ = min(minZ,z);
-	maxX = max(maxX,x);
-	maxY = max(maxY,y);
-	maxZ = max(maxZ,z);
+	minX = std::min(minX,x);
+	minY = std::min(minY,y);
+	minZ = std::min(minZ,z);
+	maxX = std::max(maxX,x);
+	maxY = std::max(maxY,y);
+	maxZ = std::max(maxZ,z);
 }
 MULTIMAP_API void MBRect::Update(std::vector<DblPoint> & points) {
 	Reset();
 	for ( size_t p=0; p<points.size(); p++ ) {
-		minX = min(minX,points[p].X);
-		maxX = max(maxX,points[p].X);
-		minY = min(minY,points[p].Y);
-		maxY = max(maxY,points[p].Y);
-		minZ = min(minZ,points[p].Z);
-		maxZ = max(maxZ,points[p].Z);
+		minX = std::min(minX,points[p].X);
+		maxX = std::max(maxX,points[p].X);
+		minY = std::min(minY,points[p].Y);
+		maxY = std::max(maxY,points[p].Y);
+		minZ = std::min(minZ,points[p].Z);
+		maxZ = std::max(maxZ,points[p].Z);
 	}
 }
 MULTIMAP_API void MBRect::UpdateXY(std::vector<DblPoint> & points) {
@@ -658,18 +634,18 @@ MULTIMAP_API void MBRect::UpdateXY(std::vector<DblPoint> & points) {
 	maxX   = -DBL_MAX;
 	maxY   = -DBL_MAX;
 	for ( size_t p=0; p<points.size(); p++ ) {
-		minX = min(minX,points[p].X);
-		maxX = max(maxX,points[p].X);
-		minY = min(minY,points[p].Y);
-		maxY = max(maxY,points[p].Y);
+		minX = std::min(minX,points[p].X);
+		maxX = std::max(maxX,points[p].X);
+		minY = std::min(minY,points[p].Y);
+		maxY = std::max(maxY,points[p].Y);
 	}
 }
 MULTIMAP_API void MBRect::UpdateZ(std::vector<DblPoint> & points) {
 	minZ   =  DBL_MAX;
 	maxZ   = -DBL_MAX;
 	for ( size_t p=0; p<points.size(); p++ ) {
-		minZ = min(minZ,points[p].Z);
-		maxZ = max(maxZ,points[p].Z);
+		minZ = std::min(minZ,points[p].Z);
+		maxZ = std::max(maxZ,points[p].Z);
 	}
 }
 MULTIMAP_API MBRect MBRect::Round(void) {
@@ -697,12 +673,12 @@ MULTIMAP_API bool MBRect::Intersect(MBRect & intersection, MBRect & other) {
 MULTIMAP_API bool MBRect::Intersect(MBRect & intersection, MBRect *other) {
 	bool intersected = false;
 	if ( AnyInteract(other) ) {
-		intersection.minX = max(minX,other->minX);
-		intersection.minY = max(minY,other->minY);
-		intersection.minZ = max(minZ,other->minZ);
-		intersection.maxX = min(maxX,other->maxX);
-		intersection.maxY = min(maxY,other->maxY);
-		intersection.maxZ = min(maxZ,other->maxZ);
+		intersection.minX = std::max(minX,other->minX);
+		intersection.minY = std::max(minY,other->minY);
+		intersection.minZ = std::max(minZ,other->minZ);
+		intersection.maxX = std::min(maxX,other->maxX);
+		intersection.maxY = std::min(maxY,other->maxY);
+		intersection.maxZ = std::min(maxZ,other->maxZ);
 		intersected = true;
 	}
 	return intersected;
@@ -714,12 +690,12 @@ MULTIMAP_API MBRect MBRect::Union(MBRect & other) {
 
 MULTIMAP_API MBRect MBRect::Union(MBRect *other) {
 	MBRect _union;
-	_union.minX = min(minX,other->minX);
-	_union.minY = min(minY,other->minY);
-	_union.minZ = min(minZ,other->minZ);
-	_union.maxX = max(maxX,other->maxX);
-	_union.maxY = max(maxY,other->maxY);
-	_union.maxZ = max(maxZ,other->maxZ);
+	_union.minX = std::min(minX,other->minX);
+	_union.minY = std::min(minY,other->minY);
+	_union.minZ = std::min(minZ,other->minZ);
+	_union.maxX = std::max(maxX,other->maxX);
+	_union.maxY = std::max(maxY,other->maxY);
+	_union.maxZ = std::max(maxZ,other->maxZ);
 	return _union;
 }
 

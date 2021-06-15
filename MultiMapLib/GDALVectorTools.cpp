@@ -1,12 +1,10 @@
-#pragma warning ( disable : 4251 )
 #include "MultiMap.h"
 #include "MFUtils.h"
 #include "GDALVectorTools.h"
 #include "GDALImageTools.h"
 #include "GDALPolygonize.h"
-#include <vector>
-#include <string>
 
+DISABLE_WARNINGS
 #include "gdal.h"
 #include "gdal_priv.h"
 #include "gdal_alg.h"
@@ -15,6 +13,7 @@
 #include "ogrsf_frmts.h"
 #include "cpl_conv.h"
 #include "cpl_string.h"
+ENABLE_WARNINGS
 
 MULTIMAP_API GDALVectorTools::~GDALVectorTools() {
 }

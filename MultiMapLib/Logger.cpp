@@ -1,24 +1,10 @@
-/**
-  * Copyright 2014 Mizar, LLC
-  * All Rights Reserved.
-  *
-  * This file is part of Mizar's MultiMap software library.
-  * MultiMap is licensed under the terms of the GNU Lesser General Public License
-  * as published by the Free Software Foundation, either version 3 of the License, or
-  * (at your option) any later version a copy of which is available at http://www.gnu.org/licenses/
-  *
-  * MultiMap is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU Lesser General Public License for more details.
-  *
-  * You may NOT remove this copyright notice; it must be retained in any modified 
-  * version of the software.
-  **/
 #include "MultiMap.h"
 #include "Logger.h"
 #include "MFUtils.h"
+
+DISABLE_WARNINGS
 #include <boost/thread.hpp>
+ENABLE_WARNINGS
 
 static boost::mutex    logMutex;
 
@@ -167,62 +153,6 @@ void Logger::Log (unsigned long _mask, Level _level, std::string format, ...){
 		}
 	}
 	if (threadLock) Unlock();
-}
-
-void Logger::LogHexDump(unsigned long _mask, Level _level, unsigned char* location, int bytes, int mark) {
-	if (threadLock) Lock();
-	if ( _level!=OFF && ( _level == ALWAYS || level == DBG || _level >= level ) ) {
-		std::string hexDump = Logger::LogHexDumpToString(location,bytes,mark);
-		Log(_mask,_level,hexDump);
-	}
-	if (threadLock) Unlock();
-}
-
-STATIC std::string Logger::LogHexDumpToString(unsigned char* location, int bytes, int mark) {
-	int lines = (bytes)/16;
-	int leader = 18;
-	int trailer = 2;
-	int bytesPrinted = 0;
-
-	char* buffer = new char[(bytes*5)+((lines+1)*(leader+trailer))];
-	char* pBuffer = buffer;
-	char* offset = 0;
-
-	sprintf(pBuffer,"%d Bytes starting at address %p\n",bytes,(unsigned int)location+(unsigned int)offset);
-	pBuffer += strlen(buffer);
-	sprintf(pBuffer,"  Offset  0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F\n");
-	pBuffer = buffer + strlen(buffer);
-	unsigned char byteValue;
-	unsigned char* pByteValue;
-
-	for ( size_t l=0; l<lines; l++ ) {
-		sprintf(pBuffer,"%08x",offset);
-		pBuffer += 8;
-		for ( size_t b=0; b<16 && (l*16+b<bytes); b++ ) {
-			pByteValue = location+(unsigned long)offset++;
-			byteValue = *pByteValue;
-			if ( bytesPrinted == mark ) {
-				sprintf(pBuffer,"(%02x",byteValue);
-				if ( (b+1)%16==0 ) {
-					sprintf(pBuffer+3,")");
-					mark = -1;
-					pBuffer++;
-				}
-			} else if ( bytesPrinted == mark+1 ) {
-				sprintf(pBuffer,")%02x",byteValue);
-			} else {
-				sprintf(pBuffer," %02x",byteValue);
-			}
-			pBuffer += 3;
-
-			bytesPrinted++;
-		}
-		sprintf(pBuffer,"\n");
-		pBuffer++;
-	}
-
-	//std::cout << buffer << std::endl;
-	return std::string(buffer);
 }
 
 void Logger::SetLogFile(std::string logfile){

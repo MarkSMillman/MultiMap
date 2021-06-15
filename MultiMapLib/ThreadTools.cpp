@@ -2,6 +2,8 @@
 #include "MultiMap.h"
 #include "ThreadTools.h"
 #include "MFUtils.h"
+
+DISABLE_WARNINGS
 #include <iostream>
 #include <stdio.h>
 
@@ -13,8 +15,7 @@
 //#include <boost/process.hpp>
 #include <boost/filesystem/path.hpp>
 #include <boost/system/error_code.hpp>
-
-#pragma warning ( disable : 4996 )
+ENABLE_WARNINGS
 
 #ifdef _WIN32
 #define POPEN _popen

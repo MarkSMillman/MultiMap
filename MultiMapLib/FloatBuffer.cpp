@@ -5,13 +5,9 @@
 #include "MBRect.h"
 #include "Logger.h"
 
-#pragma warning ( disable : 4251 ) // disable std::vector<_Ty> needs dll-interface warning from within gdal_priv.h
+DISABLE_WARNINGS
 #include "gdal_priv.h"
-
-#undef min
-#undef max
-#define max(a,b) (((a) > (b)) ? (a) : (b))
-#define min(a,b) (((a) < (b)) ? (a) : (b))
+ENABLE_WARNINGS
 
 MULTIMAP_API FloatBuffer::~FloatBuffer(void) {
 	if (!foreignBuffer && buffer) {

@@ -1,22 +1,4 @@
 #pragma once
-/**
-  * Copyright 2014 Mizar, LLC
-  * All Rights Reserved.
-  *
-  * This file is part of Mizar's MultiMap software library.
-  * MultiMap is licensed under the terms of the GNU Lesser General Public License
-  * as published by the Free Software Foundation, either version 3 of the License, or
-  * (at your option) any later version a copy of which is available at http://www.gnu.org/licenses/
-  *
-  * MultiMap is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU Lesser General Public License for more details.
-  *
-  * You may NOT remove this copyright notice; it must be retained in any modified 
-  * version of the software.
-  **/
-
 #if defined (_WIN32)  || defined(_WIN64)
 #ifdef _USRDLL
 #define MULTIMAP_API __declspec(dllexport)
@@ -47,6 +29,8 @@ __pragma (warning (disable : 26439 26444 26450 26451 26495 26498 26812 28182 282
 DISABLE_WARNINGS
 #include <vector>
 #include <string>
+#include <stdint.h>
+#include <algorithm>
 ENABLE_WARNINGS
 
 // These are used for annotative purposes only so that the CPP file has a indication of that is defined in the H file.

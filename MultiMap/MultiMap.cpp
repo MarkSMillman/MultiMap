@@ -1,9 +1,9 @@
 #include "MultiMap.h"
 #include "MFUtils.h"
 #include "ByteBuffer.h"
-#include "GDALOCIConnector.h"
+//#include "GDALOCIConnector.h"
 #include "ParameterParser.h"
-#include "DLMProcessor.h"
+//#include "DLMProcessor.h"
 #include "LASProcessor.h"
 #include "Logger.h"
 #include <iostream>
@@ -47,6 +47,7 @@ int main(int argc, char* argv[] ) {
 			delete lasParams;
 		}
 		break;
+#ifdef USE_OCI
 		case CMD_DLM:
 			{
 				std::cout << "DLM" << std::endl;
@@ -57,6 +58,7 @@ int main(int argc, char* argv[] ) {
 				delete dlmParams;
 			}
 			break;
+#endif
 		case CMD_ERODE:
 			{
 				std::cout << "ERODE" << std::endl;

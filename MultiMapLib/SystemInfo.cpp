@@ -1,33 +1,19 @@
-/**
-  * Copyright 2014 Mizar, LLC
-  * All Rights Reserved.
-  *
-  * This file is part of Mizar's MultiMap software library.
-  * MultiMap is licensed under the terms of the GNU Lesser General Public License
-  * as published by the Free Software Foundation, either version 3 of the License, or
-  * (at your option) any later version a copy of which is available at http://www.gnu.org/licenses/
-  *
-  * MultiMap is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU Lesser General Public License for more details.
-  *
-  * You may NOT remove this copyright notice; it must be retained in any modified 
-  * version of the software.
-  **/
 #include "MultiMap.h"
 #include "SystemInfo.h"
 #include "MFUtils.h"
 
+DISABLE_WARNINGS
 #if defined (__windows__)
 #include <windows.h>
 #include <malloc.h>
 #include <iostream>
+
 typedef BOOL (WINAPI *LPFN_GLPI)(PSYSTEM_LOGICAL_PROCESSOR_INFORMATION, PDWORD);
 
 #else if defined ( __linux__ )
 #include <unistd.h>
 #endif
+ENABLE_WARNINGS
 
 MULTIMAP_API SystemInfo::~SystemInfo(void)
 {

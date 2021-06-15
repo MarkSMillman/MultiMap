@@ -1,16 +1,10 @@
 #pragma once
-#include <limits>
-#include <vector>
-#include <assert.h>
-#ifdef min
-#define savedMin min
-#define savedMax max
-#undef min
-#undef max
-#endif
+#include "MultiMap.h"
 
-#define max(a,b) (((a) > (b)) ? (a) : (b))
-#define min(a,b) (((a) < (b)) ? (a) : (b))
+DISABLE_WARNINGS
+#include <limits>
+#include <assert.h>
+ENABLE_WARNINGS
 
 template <class T>
 class QuickHistogram {
@@ -236,7 +230,7 @@ public:
 		if ( bins && binCount > 0 ) {
 			minBinValue = ULLONG_MAX;
 			for ( size_t b=0; b<binCount; b++ ) {
-				minBinValue = min(minBinValue,bins[b]);
+				minBinValue = std::min(minBinValue,bins[b]);
 			}
 			size_t binRange = maxBinValue - minBinValue + 1;
 			heightScale = static_cast<float>(binRange) / static_cast<float>(height);
@@ -409,10 +403,3 @@ template <class T> QuickHistogram<T>& QuickHistogram<T>::operator=(const QuickHi
 	}
 	return *this;
 }
-
-#ifdef savedMin
-#undef min
-#undef max
-#define min savedMin
-#define max savedMax
-#endif

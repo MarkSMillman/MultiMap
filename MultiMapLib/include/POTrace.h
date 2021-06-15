@@ -1,6 +1,9 @@
 #pragma once
 #include "MultiMap.h"
+
+DISABLE_WARNINGS
 #include "potracelib.h"
+ENABLE_WARNINGS
 
 class OGRDataSource;
 class OGRLayer;
@@ -28,9 +31,9 @@ private:
 
 	int createTestBitmap();
 
-	potrace_bitmap_t   *bm;
-	potrace_param_t *param;
-	potrace_state_t    *st;
+	potrace_bitmap_t* bm{ nullptr };
+	potrace_param_t *param{ nullptr };
+	potrace_state_t    *st{ nullptr };
 
-	double geotransform[6];
+	double geotransform[6]{ 0.0 };
 };

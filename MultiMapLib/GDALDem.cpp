@@ -83,12 +83,10 @@
 *  Multiscale terrain analysis of multibeam bathymetry data for habitat mapping
 *  on the continental slope Marine Geodesy, 2007, 30, 3-35
 ****************************************************************************/
-#pragma warning ( disable : 4251 )
 #include "MultiMap.h"
 #include "GDALDem.h"
 
-#pragma warning ( disable : 4996 )
-
+DISABLE_WARNINGS
 #include <stdlib.h>
 #include <math.h>
 
@@ -96,6 +94,7 @@
 #include "cpl_string.h"
 #include "gdal.h"
 #include "gdal_priv.h"
+ENABLE_WARNINGS
 
 #ifndef M_PI
 # define M_PI  3.1415926535897932384626433832795
@@ -2061,9 +2060,8 @@ PRIVATE int GDALDem::Run(GDALDatasetH *phDstDS, std::string dstDSName, std::stri
 		|| (GDALGetMetadataItem( hDriver, GDAL_DCAP_CREATE, NULL ) == NULL &&
 		GDALGetMetadataItem( hDriver, GDAL_DCAP_CREATECOPY, NULL ) == NULL))
 	{
-		fprintf( stderr, "Output driver `%s' not recognised to have");
-		fprintf( stderr, "output support.  The following format drivers are configured\n"
-			"and support output:\n",pszFormat );
+		fprintf( stderr, "Output driver `%s' not recognised to have", pszFormat);
+		fprintf( stderr, "output support.  The following format drivers are configured\nand support output:\n" );
 
 		GDALDestroyDriverManager();
 		exit( 1 );

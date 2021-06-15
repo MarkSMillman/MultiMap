@@ -1,24 +1,6 @@
 #pragma once
 #include "MultiMap.h"
-#include <string>
-#include <vector>
-/**
-  * Copyright 2014 Mizar, LLC
-  * All Rights Reserved.
-  *
-  * This file is part of Mizar's MultiMap software library.
-  * MultiMap is licensed under the terms of the GNU Lesser General Public License
-  * as published by the Free Software Foundation, either version 3 of the License, or
-  * (at your option) any later version a copy of which is available at http://www.gnu.org/licenses/
-  *
-  * MultiMap is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU Lesser General Public License for more details.
-  *
-  * You may NOT remove this copyright notice; it must be retained in any modified 
-  * version of the software.
-  **/
+
 class SimpleStats
 {
 public:
@@ -69,28 +51,28 @@ public:
 	std::string name;
 	std::string description;
 
-	bool computeStddev;
-	bool computeMedian;
-	long count;
-	double minimum;
-	double maximum;
-	double sum;
-	double average;
-	double median;
-	double stddev;
+	bool computeStddev{ false };
+	bool computeMedian{ false };
+	long count{ 0 };
+	double minimum{ DBL_MAX };
+	double maximum{ -DBL_MAX };
+	double sum{ 0.0 };
+	double average{ 0.0 };
+	double median{ 0.0 };
+	double stddev{ 0.0 };
 
 
 private:
 	void defaults(void);
-	bool noDataSet;
-	double dNoData;
-	float fNoData;
-	int iNoData;
-	unsigned int uiNoData;
-	short sNoData;
-	unsigned short usNoData;
-	char cNoData;
-	unsigned char ucNoData;
+	bool noDataSet{ false };
+	double dNoData{ -DBL_MAX };
+	float fNoData{ -FLT_MAX };
+	int iNoData{ -1};
+	unsigned int uiNoData{ 0xFFFFFFFF };
+	short sNoData{ -1 };
+	unsigned short usNoData{ 0xFFFF };
+	char cNoData{ -1 };
+	unsigned char ucNoData{ 0xFF };
 };
 
 

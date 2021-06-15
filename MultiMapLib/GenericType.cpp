@@ -1,6 +1,9 @@
 #include "MultiMap.h"
 #include "GenericType.h"
+
+DISABLE_WARNINGS
 #include <sstream>
+ENABLE_WARNINGS
 
 /**
 * maximums is indexed by DTYPE

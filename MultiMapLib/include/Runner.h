@@ -1,11 +1,13 @@
 #pragma once
+#include "MultiMap.h"
+
+DISABLE_WARNINGS
 #if defined (_WIN32)  || defined(_WIN64)
 #include <windows.h>
 #endif
-#include <string>
-#include <vector>
 #include <stdio.h>
 #include <tchar.h>
+ENABLE_WARNINGS
 
 static const char* RNR_INPUT_FAILURE = "Could not create pipe for input file";
 static const char* RNR_OUTPUT_FAILURE = "Could not create pipe for output file";

@@ -18,8 +18,11 @@
 #pragma once
 #include "MultiMap.h"
 #include "MFUtils.h"
+
+DISABLE_WARNINGS
 #include "ogr_core.h"
 #include "ogr_featurestyle.h"
+ENABLE_WARNINGS
 
 class OGRStyle {
 public:

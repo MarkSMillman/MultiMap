@@ -1,7 +1,11 @@
 #include "MultiMap.h"
 #include "OCITools.h"
+
+DISABLE_WARNINGS
 #include "oci.h"
 #include "ociap.h"
+ENABLE_WARNINGS
+
 #pragma warning ( disable : 4267 )
 #pragma warning ( disable : 4101 )
 #define checkerr(errhp, status) checkerr0((errhp), OCI_HTYPE_ERROR, (status))
@@ -28,7 +32,7 @@ PRIVATE void OCITools::checkerr0(void *handle, ub4 htype, sword status)
 			text errbuf[2048];
 			sb4 errcode;
 			(void) OCIErrorGet(handle, 1, (text *) NULL, &errcode, errbuf, (ub4) sizeof(errbuf), htype);
-			sprintf(lastErrorMsg,"%s Error - %.*s",lastErrorMsg, sizeof(errbuf), errbuf);
+			sprintf(lastErrorMsg,"%s Error - %.*s",lastErrorMsg, static_cast<int>(sizeof(errbuf)), errbuf);
 		} else {
 			strcat(lastErrorMsg," NULL handle");            
 			strcat(lastErrorMsg," Unable to extract detailed diagnostic information");

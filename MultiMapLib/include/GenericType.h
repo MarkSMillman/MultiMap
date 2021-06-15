@@ -1,8 +1,5 @@
 #pragma once
 #include "MultiMap.h"
-#include <stdint.h>
-#include <string>
-#include <vector>
 
 typedef enum {DT_UNDEF=0,DT_UCHAR=1,DT_CHAR=2,DT_USHRT=3,DT_SHRT=4,DT_ULONG=5,DT_LONG=6,DT_ULLONG=7,DT_LLONG=8,DT_FLT=9,DT_DBL=10,DT_MAX} DTYPE;
 typedef union generictype {

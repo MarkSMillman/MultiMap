@@ -1,22 +1,8 @@
-/**
-* Copyright 2014 Mizar, LLC
-* All Rights Reserved.
-*
-* This file is part of Mizar's MultiMap software library.
-* MultiMap is licensed under the terms of the GNU Lesser General Public License
-* as published by the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version a copy of which is available at http://www.gnu.org/licenses/
-*
-* MultiMap is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Lesser General Public License for more details.
-*
-* You may NOT remove this copyright notice; it must be retained in any modified
-* version of the software.
-**/
+
 #include "MultiMap.h"
 #include "ShapeReader.h"
+
+DISABLE_WARNINGS
 #include <sstream>
 
 #pragma warning ( disable : 4996 )
@@ -39,13 +25,12 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "MFUtils.h"
 #include <conio.h>
 #include <stdio.h>
-#undef min
-#undef max
-#define max(a,b) (((a) > (b)) ? (a) : (b))
-#define min(a,b) (((a) < (b)) ? (a) : (b))
+ENABLE_WARNINGS
+
+#include "MFUtils.h"
+
 const double DEFAULT_PRECISION = 0.000000001;
 
 MULTIMAP_API MFUtils::~MFUtils() {
@@ -357,8 +342,8 @@ MULTIMAP_API void MFUtils::Common(char* szCommon, size_t _size, const char* szFi
 	memset(szCommon, 0, _size);
 	size_t len1 = strlen(szFileName1);
 	size_t len2 = strlen(szFileName2);
-	size_t len = min(len1, len2);
-	len = min(len, _size);
+	size_t len = std::min(len1, len2);
+	len = std::min(len, _size);
 	int b = 0;
 	for (size_t i = 0; i < len; i++) {
 		if (szFileName1[i] == szFileName2[i]) {
@@ -374,8 +359,8 @@ MULTIMAP_API void MFUtils::Common(char* szCommon, size_t _size, std::string file
 
 	size_t len1 = fileName1.length();
 	size_t len2 = fileName2.length();
-	size_t len = min(len1, len2);
-	len = min(len, _size);
+	size_t len = std::min(len1, len2);
+	len = std::min(len, _size);
 
 	int b = 0;
 	for (size_t i = 0; i < len; i++) {
@@ -1629,17 +1614,17 @@ MULTIMAP_API bool MFUtils::CropWindowsFromShapeFile(std::string shapeFile, std::
 						if (SHPIsClosedShape(nRecords, shapeType, record)) {
 							cropWindows[i].Reset();
 							for (int j = 0; j < record->nVertices; j++) {
-								cropWindows[i].minX = min(cropWindows[i].minX, record->padfX[j]);
-								cropWindows[i].maxX = max(cropWindows[i].maxX, record->padfX[j]);
-								cropWindows[i].minY = min(cropWindows[i].minY, record->padfY[j]);
-								cropWindows[i].maxY = max(cropWindows[i].maxY, record->padfY[j]);
+								cropWindows[i].minX = std::min(cropWindows[i].minX, record->padfX[j]);
+								cropWindows[i].maxX = std::max(cropWindows[i].maxX, record->padfX[j]);
+								cropWindows[i].minY = std::min(cropWindows[i].minY, record->padfY[j]);
+								cropWindows[i].maxY = std::max(cropWindows[i].maxY, record->padfY[j]);
 							}
 							if (hDbf && labelIndex >= 0) {
 								char* name = (char*)DBFReadStringAttribute(hDbf, i, labelIndex);
 								windowNames[i] = std::string(name);
 							}
 							else {
-								double maxmax = max(cropWindows[i].maxX - cropWindows[i].minX, cropWindows[i].maxY - cropWindows[i].minY);
+								double maxmax = std::max(cropWindows[i].maxX - cropWindows[i].minX, cropWindows[i].maxY - cropWindows[i].minY);
 								long xname = static_cast<long>(floor(cropWindows[i].minX / 1000.0));
 								long yname = static_cast<long>(floor(cropWindows[i].minY / 1000.0));
 								char wname[1024];

@@ -3,10 +3,10 @@
 #include "ActionProcessor.h"
 #include "Logger.h"
 
-#include "GDALOCIConnector.h"
 #include "GDALImageTools.h"
 #include "GDALVectorTools.h"
 
+DISABLE_WARNINGS
 #include "gdal.h"
 #include "gdal_priv.h"
 #include "ogr_api.h"
@@ -20,6 +20,7 @@
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/foreach.hpp>
 #include <boost/lexical_cast.hpp>
+ENABLE_WARNINGS
 
 MULTIMAP_API ActionProcessor::~ActionProcessor() {
 }

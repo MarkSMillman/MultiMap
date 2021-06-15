@@ -5,8 +5,10 @@
 #include "GDALOCIConnector.h"
 #include "ThreadTools.h"
 #include "ByteBuffer.h"
-#include "Ogr2ogr.h"
+
 #include "GDALImageTools.h"
+
+DISABLE_WARNINGS
 #include "GDALVectorTools.h"
 #include "gdal_priv.h"
 #include "gdal_alg.h"
@@ -14,6 +16,8 @@
 #include "ogr_core.h"
 #include "ogrsf_frmts.h"
 #include "ogr_oci.h"
+#include "Ogr2ogr.h"
+ENABLE_WARNINGS
 
 /**
 @see http://www.gdal.org/drv_oci.html

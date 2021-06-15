@@ -1,9 +1,6 @@
 #pragma once
 #include "MultiMap.h"
-#include <vector>
 
-class Logger;
-class MBRect;
 class OGRGeometry;
 class OGRLayer;
 class VectorTools {

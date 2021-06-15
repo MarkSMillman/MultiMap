@@ -16,7 +16,7 @@
   * You may NOT remove this copyright notice; it must be retained in any modified 
   * version of the software.
   **/
-#include <vector>
+#include "MultiMap.h"
 #include "GenericPoint.hpp"
 #define DblPoint GenericPoint<double>
 #define FloatPoint  GenericPoint<float>

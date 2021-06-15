@@ -1,6 +1,8 @@
 #include "MultiMap.h"
 #include "Runner.h"
 #include "Logger.h"
+
+DISABLE_WARNINGS
 #include <tchar.h>
 #include <stdio.h> 
 #include <strsafe.h>
@@ -10,6 +12,7 @@
 #include <windows.h>
 #include <AclAPI.h>
 #endif
+ENABLE_WARNINGS
 
 Runner::~Runner(void) {
 	Close();

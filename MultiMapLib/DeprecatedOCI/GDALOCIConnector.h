@@ -1,8 +1,6 @@
 #pragma once
 #include "MultiMap.h"
 #include "GDALCommon.h"
-#include <string>
-#include <vector>
 #include "MBRect.h"
 
 /**

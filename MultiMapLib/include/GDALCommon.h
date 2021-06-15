@@ -1,9 +1,12 @@
 #pragma once
 #include "MultiMap.h"
 #include "ColorTable.h"
+
+DISABLE_WARNINGS
 #include "ogr_core.h"
 #include "cpl_error.h"
 #include "cpl_progress.h"
+ENABLE_WARNINGS
 
 class MBRect;
 class GDALCommon {

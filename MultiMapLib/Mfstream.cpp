@@ -1,6 +1,8 @@
 #pragma warning ( disable : 4251 )
 #include "MultiMap.h"
 #include "Mfstream.h"
+#include "MappedFile.h"
+using namespace FLIDAR;
 
 MULTIMAP_API Mfstream::~Mfstream(void) {
 }
@@ -20,9 +22,9 @@ MULTIMAP_API void Mfstream::open(const std::string& filename, std::ios_base::ope
 	if ( is_open() ) {
 		close();
 	}
-	mf = new MappedFile();
+	mf = new FLIDAR::MappedFile();
 	if ( mode & std::ios_base::out ) {
-		currentPosition = mf->OpenReadWrite(filename);
+		currentPosition = mf->OpenForUpdate(filename);
 	} else {
 		currentPosition = mf->OpenReadOnly(filename);
 	}
