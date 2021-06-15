@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2181304F-267E-4883-B2D6-33F3EE4D9B50}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>MultiMapLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.dll</TargetExt>
+    <TargetName>$(ProjectName)D</TargetName>
+    <SourcePath>D:\OpenSource\gdal-1.11.0\gcore;D:\OpenSource\gdal-1.11.0\ogr\ogrsf_frmts\oci;D:\OpenSource\gdal-1.11.0\ogr\ogrsf_frmts;D:\OpenSource\gdal-1.11.0\ogr;$(SourcePath);$(VCInstallDir)atlmfc\src\mfc;$(VCInstallDir)atlmfc\src\mfcm;$(VCInstallDir)atlmfc\src\atl;$(VCInstallDir)crt\src;</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MultiMapLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;\boost\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>-D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>BOOST_ALL_DYN_LINK;WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;include\oci;..\..\Boost\include_vc120_v55;..\..\GdalSDK\include;D:\Woolpert\FLiDAR\FLiDARLib\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>-D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>..\..\Boost\lib_vc120_v55;..\lib64d;..\..\GdalSDK\libD;D:\Woolpert\FLiDAR\x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FLiDARLibD.lib;libpotrace-dll.a;libpotrace.a;oci.lib;ociw32.lib;oraocci11.lib;gdal_i.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MultiMapLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>include;\boost\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>-D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>BOOST_ALL_DYN_LINK;WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>include;include\oci;..\..\Boost\include_vc120_v55;..\..\GdalSDK\include;D:\Woolpert\FLiDAR\FLiDARLib\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>-D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\Boost\lib_vc120_v55;..\lib64;..\..\GdalSDK\lib;D:\Woolpert\FLiDAR\x64\Release</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FLiDARLib.lib;libpotrace-dll.a;libpotrace.a;oci.lib;ociw32.lib;oraocci11.lib;gdal_i.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Action.cpp" />
+    <ClCompile Include="ActionProcessor.cpp" />
+    <ClCompile Include="FloatBuffer.cpp" />
+    <ClCompile Include="DLMProcessor.cpp" />
+    <ClCompile Include="GDALCommon.cpp" />
+    <ClCompile Include="GDALDem.cpp" />
+    <ClCompile Include="GDALGrid_.cpp" />
+    <ClCompile Include="GDALImageTools.cpp" />
+    <ClCompile Include="GDALOCIConnector.cpp" />
+    <ClCompile Include="GDALRasterPolygonEnumerator.cpp" />
+    <ClCompile Include="GDALVectorTools.cpp" />
+    <ClCompile Include="GDALWarpRaster.cpp" />
+    <ClCompile Include="GenericBuffer.cpp" />
+    <ClCompile Include="LASProcessor.cpp" />
+    <ClCompile Include="MapTextAPI.cpp" />
+    <ClCompile Include="NRC_Laplace.cpp" />
+    <ClCompile Include="NRC_Linbcg.cpp" />
+    <ClCompile Include="OCITools.cpp" />
+    <ClCompile Include="MFUtils.cpp" />
+    <ClCompile Include="ColorTable.cpp" />
+    <ClCompile Include="DBFReader.cpp" />
+    <ClCompile Include="DouglasPeucker.cpp" />
+    <ClCompile Include="GenericType.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="MappedFile.cpp" />
+    <ClCompile Include="MBRect.cpp" />
+    <ClCompile Include="Mfstream.cpp" />
+    <ClCompile Include="Ogr2ogr.cpp" />
+    <ClCompile Include="ogroci\ocitest.cpp" />
+    <ClCompile Include="ogroci\oci_utils.cpp" />
+    <ClCompile Include="ogroci\ogrocidatasource.cpp" />
+    <ClCompile Include="ogroci\ogrocidriver.cpp" />
+    <ClCompile Include="ogroci\ogrocilayer.cpp" />
+    <ClCompile Include="ogroci\ogrociloaderlayer.cpp" />
+    <ClCompile Include="ogroci\ogrociselectlayer.cpp" />
+    <ClCompile Include="ogroci\ogrocisession.cpp" />
+    <ClCompile Include="ogroci\ogrocistatement.cpp" />
+    <ClCompile Include="ogroci\ogrocistringbuf.cpp" />
+    <ClCompile Include="ogroci\ogrocistroke.cpp" />
+    <ClCompile Include="ogroci\ogrocitablelayer.cpp" />
+    <ClCompile Include="ogroci\ogrociwritablelayer.cpp" />
+    <ClCompile Include="OGRStyle.cpp" />
+    <ClCompile Include="Parameters.cpp" />
+    <ClCompile Include="GDALPolygonize.cpp" />
+    <ClCompile Include="POTrace.cpp" />
+    <ClCompile Include="ByteBuffer.cpp" />
+    <ClCompile Include="Runner.cpp" />
+    <ClCompile Include="ShapeReader.cpp" />
+    <ClCompile Include="SimpleStats.cpp" />
+    <ClCompile Include="SystemInfo.cpp" />
+    <ClCompile Include="ThreadTools.cpp" />
+    <ClCompile Include="VectorTools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Action.h" />
+    <ClInclude Include="include\ActionProcessor.h" />
+    <ClInclude Include="include\FloatBuffer.h" />
+    <ClInclude Include="include\DLMProcessor.h" />
+    <ClInclude Include="include\GDALCommon.h" />
+    <ClInclude Include="include\GDALGrid_.h" />
+    <ClInclude Include="include\GDALImageTools.h" />
+    <ClInclude Include="include\GDALDem.h" />
+    <ClInclude Include="include\GDALPolygonize.h" />
+    <ClInclude Include="include\GDALRasterPolygonEnumerator.h" />
+    <ClInclude Include="include\GDALVectorTools.h" />
+    <ClInclude Include="include\GDALWarpRaster.h" />
+    <ClInclude Include="include\GenericBuffer.h" />
+    <ClInclude Include="include\LASProcessor.h" />
+    <ClInclude Include="include\NRC_Laplace.h" />
+    <ClInclude Include="include\MapTextAPI.h" />
+    <ClInclude Include="include\NRC.h" />
+    <ClInclude Include="include\NRC_Linbcg.h" />
+    <ClInclude Include="include\OCITools.h" />
+    <ClInclude Include="include\MFUtils.h" />
+    <ClInclude Include="include\ColorTable.h" />
+    <ClInclude Include="include\DouglasPeucker.h" />
+    <ClInclude Include="include\MultiMap.h" />
+    <ClInclude Include="include\GenericType.h" />
+    <ClInclude Include="include\ExtraBytes.h" />
+    <ClInclude Include="include\Logger.h" />
+    <ClInclude Include="include\MappedFile.h" />
+    <ClInclude Include="include\MFistream.hpp" />
+    <ClInclude Include="include\MFostream.hpp" />
+    <ClInclude Include="include\Mfstream.h" />
+    <ClInclude Include="include\GDALOCIConnector.h" />
+    <ClInclude Include="include\Ogr2ogr.h" />
+    <ClInclude Include="include\OGRStyle.h" />
+    <ClInclude Include="include\Parameters.h" />
+    <ClInclude Include="include\POTrace.h" />
+    <ClInclude Include="include\potracelib.h" />
+    <ClInclude Include="include\QuickHistogram.hpp" />
+    <ClInclude Include="include\ByteBuffer.h" />
+    <ClInclude Include="include\Runner.h" />
+    <ClInclude Include="include\ShapeReader.h" />
+    <ClInclude Include="include\SimplerStats.hpp" />
+    <ClInclude Include="include\SimpleStats.h" />
+    <ClInclude Include="include\GenericVector.hpp" />
+    <ClInclude Include="include\MBRect.h" />
+    <ClInclude Include="include\GenericPoint.hpp" />
+    <ClInclude Include="include\SystemInfo.h" />
+    <ClInclude Include="include\ThreadTools.h" />
+    <ClInclude Include="include\VectorTools.h" />
+    <ClInclude Include="ogroci\ogr_oci.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

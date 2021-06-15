@@ -1,0 +1,1 @@
+sqlplus prime2_supply_demo/prime2_supply_demo@domain13

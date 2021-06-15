@@ -1,0 +1,55 @@
+{
+	"processes" :
+	{
+	  "process" : 
+	  {
+		"username" : "prime2_enhance",
+		"password" : "prime2_enhance",
+		"tnsname" : "domain13",
+		"tables" : "WAY:WATER:VEGETATION",
+		"input_folder" : "H:/Source/SVN-CPP/MizaRaster/SampleData/Test",
+		"output_folder" : "H:/Source/SVN-CPP/MizaRaster/SampleData/Test",
+		"resolution" : "1",
+		"actions" :
+		{
+		  "action" :
+		  {
+			"type" : "copy",
+			"indriver" : "OCI",
+			"inlayer_sql" : "select POLY_GEOM_VALUE from WATER where rownum=1",
+			"outdriver" : "ESRI Shapefile",
+			"outlayer_name" : "WaterRowOne.shp",
+			"transient" : "true"
+		  },
+		  "action" :
+		  {
+			"type" : "rasterize",
+			"outdriver" : "MEM",
+			"outlayer_name" : "MEMORY1",
+			"resolution" : "1"
+		  },
+		  "action" :
+		  {
+			"type" : "polygonize",
+			"outdriver" : "MEM",
+			"outlayer_name" : "MEMORY2",
+			"resolution" : "1"
+		  },
+		  "action" :
+		  {
+			"type" : "simplify",
+			"outdriver" : "MEM",
+			"outlayer_name" : "MEMORY3",
+			"resolution" : "3"
+		  },
+		  "action" :
+		  {
+			"type" : "copy",
+			"outdriver" : "OCI",
+			"outlayer_name" : "DLM_WATER",
+			"resolution" : "3"
+		  }
+		}
+	  }
+	}
+}

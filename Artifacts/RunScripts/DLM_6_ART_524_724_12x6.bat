@@ -1,0 +1,9 @@
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Apron       --outclassnum=57  --inclassnum=57 --input=dlm_0_artificial --output=dlm_6_artificial --resolution=3.0  --product=6001 --range=524000.0,724000.0,536000.0,730000.0 
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=TrafficArea --outclassnum=162 --inclassnum=162,586,573,577 --input=dlm_0_artificial --output=dlm_6_artificial --resolution=3.0  --product=6001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Greenery    --outclassnum=551 --inclassnum=551,207 --input=dlm_0_artificial --output=dlm_6_artificial --resolution=3.0  --product=6001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Concrete    --outclassnum=581 --inclassnum=581,547 --input=dlm_0_artificial --output=dlm_6_artificial --resolution=3.0  --product=6001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=ManMade     --outclassnum=538 --inclassnum=538,544,576 --input=dlm_0_artificial --output=dlm_6_artificial --resolution=3.0  --product=6001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Parking     --outclassnum=545 --inclassnum=545 --input=dlm_0_artificial --output=dlm_6_artificial --resolution=3.0  --product=6001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Rail        --outclassnum=359 --inclassnum=359,567 --input=dlm_0_artificial --output=dlm_6_artificial --resolution=3.0  --product=6001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Railbed     --outclassnum=566 --inclassnum=566 --input=dlm_0_artificial --output=dlm_6_artificial --resolution=3.0  --product=6001 --range=524000.0,724000.0,536000.0,730000.0
+

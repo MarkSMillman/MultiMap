@@ -1,0 +1,9 @@
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Airport     --outclassnum=333 --inclassnum=333,398 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0 
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Main        --outclassnum=266 --inclassnum=266 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=First       --outclassnum=179 --inclassnum=179 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Second      --outclassnum=409 --inclassnum=409 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Third       --outclassnum=475 --inclassnum=475 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Fourth      --outclassnum=191 --inclassnum=191 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Fifth       --outclassnum=177 --inclassnum=177 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Sixth       --outclassnum=429 --inclassnum=429 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0
+MultiMap DLM --verbose --class=FUNC_ID --outclassname=Seventh     --outclassnum=413 --inclassnum=413 --input=dlm_0_way --output=dlm_3_way --resolution=3.0  --product=3001 --range=524000.0,724000.0,536000.0,730000.0

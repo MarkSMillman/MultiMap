@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source Files\OGROCI">
+      <UniqueIdentifier>{7a83e771-cc54-4921-8f28-3f25bbc299d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GDALApps">
+      <UniqueIdentifier>{17a35176-d91b-4581-b640-5d06d20a75dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GDALApps">
+      <UniqueIdentifier>{cbad4245-0c64-412a-ac23-c07a047f144a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NRC">
+      <UniqueIdentifier>{dcf23afb-2bd6-4fe1-96d1-442ce746c772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NRC">
+      <UniqueIdentifier>{8af430fd-a921-44f5-a174-0be54aed33b1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ColorTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DouglasPeucker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MappedFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Runner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DBFReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parameters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mfstream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MFUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="POTrace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALOCIConnector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALDem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALWarpRaster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALImageTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALCommon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALVectorTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OCITools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\oci_utils.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ocitest.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrocidatasource.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrocidriver.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrocilayer.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrociloaderlayer.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrociselectlayer.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrocisession.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrocistatement.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrocistringbuf.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrocistroke.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrocitablelayer.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="ogroci\ogrociwritablelayer.cpp">
+      <Filter>Source Files\OGROCI</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALRasterPolygonEnumerator.cpp">
+      <Filter>Source Files\GDALApps</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALPolygonize.cpp">
+      <Filter>Source Files\GDALApps</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogr2ogr.cpp">
+      <Filter>Source Files\GDALApps</Filter>
+    </ClCompile>
+    <ClCompile Include="MapTextAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DLMProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OGRStyle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDALGrid_.cpp">
+      <Filter>Source Files\GDALApps</Filter>
+    </ClCompile>
+    <ClCompile Include="NRC_Laplace.cpp">
+      <Filter>Source Files\NRC</Filter>
+    </ClCompile>
+    <ClCompile Include="NRC_Linbcg.cpp">
+      <Filter>Source Files\NRC</Filter>
+    </ClCompile>
+    <ClCompile Include="LASProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MBRect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ByteBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\ColorTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SystemInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DouglasPeucker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MappedFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SimpleStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SimplerStats.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ShapeReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Runner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\QuickHistogram.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Parameters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MFistream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MFostream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mfstream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GenericType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ExtraBytes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MFUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\POTrace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\potracelib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALOCIConnector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALDem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALWarpRaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALImageTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALCommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Action.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALVectorTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ActionProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MultiMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ThreadTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VectorTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OCITools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ogroci\ogr_oci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALRasterPolygonEnumerator.h">
+      <Filter>Header Files\GDALApps</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALPolygonize.h">
+      <Filter>Header Files\GDALApps</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Ogr2ogr.h">
+      <Filter>Header Files\GDALApps</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MapTextAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DLMProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OGRStyle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GDALGrid_.h">
+      <Filter>Header Files\GDALApps</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NRC.h">
+      <Filter>Header Files\NRC</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NRC_Laplace.h">
+      <Filter>Header Files\NRC</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NRC_Linbcg.h">
+      <Filter>Header Files\NRC</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LASProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GenericPoint.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GenericVector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MBRect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ByteBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FloatBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GenericBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

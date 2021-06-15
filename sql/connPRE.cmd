@@ -1,0 +1,1 @@
+sqlplus prime2_enhance/prime2_enhance@domain13

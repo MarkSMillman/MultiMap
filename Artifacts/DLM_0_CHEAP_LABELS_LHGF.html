@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:spry="http://ns.adobe.com/spry/">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mark's ATLAS</title>
+
+
+
+<script language="Javascript" src="http://demo.mizarllc.com:7004/mapviewer/fsmc/jslib/oraclemaps.js"></script>
+
+<script type="text/javascript">
+var eLocURL = "http://localhost:8080/mapviewer/mcserver";
+var baseURL = "http://localhost:8080/mapviewer";
+var mapview;
+var layername = "MM_DLM.DLM_0_LABELLED";
+var centerX = 527900;
+var centerY = 725500;
+var srid = 2157;
+var homeZoom = 19;
+var currentZoom = 19;
+var wayFOI;
+var uwayFOI;
+function display_map() {
+  mapview = new MVMapView(document.getElementById("map"),baseURL); 
+  mapview.addMapTileLayer(new MVMapTileLayer(layername,eLocURL));
+  mapview.setCenter(MVSdoGeometry.createPoint(centerX,centerY,srid));
+  mapview.setZoomLevel(homeZoom);
+  mapview.addNavigationPanel("east");
+  var scaleBar=new MVMapDecoration(new MVScaleBar(),0, 1, null, null, 4, -45);
+  mapview.addMapDecoration(scaleBar);
+  mapview.display();
+  currentZoom = mapview.getZoomLevel();
+}
+</script>
+</head>
+<body style="background:	#4E5869;" onLoad="display_map()">
+<div id="map" style="width: 100%; height: 1060px;"></div>
+
+</body>
+</html>
